@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&display=swap');
+
+*::after{
+ margin: 0%;
+ padding: 0%;
+ box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+    font-family: 'Baloo Bhai 2', cursive;
+}
+.main_container{
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("../main.png"); 
+    background-color: #cccccc; 
+    height: 100vh;
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;
+    flex-direction: column;
+}
+
+
+.music_container{
+    width: 35rem;
+    height: 50rem;
+    background-color: white;
+    box-shadow: 0 1.2rem 3rem 0.5rem rgba(8, 8, 8, 0.5);
+    border-radius: 2rem;
+    padding: 3rem;
+    text-align: center;
+    background: url("third.jpg") no-repeat fixed center;
+}
+
+.music_container #tittle{
+    text-transform: uppercase;
+    color: black;
+    letter-spacing: 0.2rem;
+    word-spacing: 0.5rem;
+    font-size: 2.5rem;
+    margin: 2rem 0;
+    /* font-weight: 500; */
+    text-shadow: 0  0.3rem 0.5rem rgba(0, 0,0, 0.4);
+}
+ 
+.music_container #artist{
+    text-transform: uppercase;
+    color: black;
+    letter-spacing: 0.2rem;
+    word-spacing: 0.5rem;
+    font-size: 2rem;
+    margin-bottom: 4rem;
+}
+
+.pic_container{
+    width: 25rem;
+    height: 25rem;
+    margin: auto;
+    /* padding: 1.2rem 0; */
+}
+.pic_container img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 1.2rem 3rem 0.5rem rgba(0, 0,0, 0.4);
+}
+
+.control_container{
+    width: 25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    margin-top: 3.5rem;
+}
+
+.control_container .fas
+{
+    color: black;
+    font-size: 2rem;
+    cursor: pointer;
+    filter: drop-shadow( 0 1.2rem 3rem 0.5rem rgba(0, 0,0, 0.4));
+}
+
+.control_container .main_button{
+    width: 5rem;
+    height: 5rem;
+    color: white;
+    border-radius: 50%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4rem;
+}
+
+.control_container .fas:hover{
+    color: grey;
+}
+
+
+.control_container .main_button:hover{
+    color: black;
+    background-color:white;
+    box-shadow: 0 1.2rem 3rem 0.5rem rgba(228, 165, 165, 0.4);
+
+}
+.anime{
+    animation: rotateplayer 3s linear infinite;
+}
+
+@keyframes rotateplayer{
+    from{transform: rotate(0deg);}
+    to{
+        transform: rotate(360deg);
+    }
+}
+      
+@media only screen and (max-width: 450px){
+    .music_container{
+        width: 75%;
+       
+    }
+    .music_container #tittle{
+        font-size: 2.2rem;
+    }
+    
+}

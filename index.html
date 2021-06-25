@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harsh Music Player</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+        integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="main_container">
+        
+        <div class="music_container">
+            <h2 id="tittle">Mat Kar Maya </h2>
+            <h3 id="artist">Neeraj Arya</h3>
+            <div class="pic_container">
+                <img src="pics/image1.jpg" alt="Mat Kar Maya ">
+            </div>
+            <div>
+                <audio src="music/image1.mp3"></audio>
+                <div class="control_container">
+                    <i class="fas fa-backward" id="prev" title="previous"></i>
+                    <i class="fas fa-play main_button" id="play" title="play"></i>
+                    <i class="fas fa-forward" id="next" title="next"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const play =  document.getElementById("play");
+        const music = document.querySelector("audio");
+        const img = document.querySelector("img");
+        const prev = document.getElementById("prev");
+        const next = document.getElementById("next");
+        const tittle = document.getElementById("tittle");
+        const artist = document.getElementById("artist");
+        let boolforplayPause = false;
+        start = () => {
+            boolforplayPause = true;
+            music.play();
+            play.classList.replace('fa-play', "fa-pause");
+            img.classList.add("anime");
+
+        };
+        stop = () => {
+            boolforplayPause = false;
+            music.pause();
+            play.classList.replace('fa-pause', "fa-play");
+            img.classList.remove("anime");
+        };
+        play.addEventListener('click' , () =>{
+            if(boolforplayPause)
+            {
+                stop();
+            }
+            else{
+                start();
+            }
+        });
+
+        const songs = [
+            {
+                name: "image1",
+                tittle: "Mat Kar Maya",
+                artist: "Neeraj Arya",
+            },
+            {
+                name: "image2",
+                tittle: "Can We Kiss Forever", 
+                artist: "Kina",
+            },
+            {
+                name: "image3",
+                tittle: "3:59", 
+                artist:"Divine",
+            },
+            {
+                name: "image4",
+                tittle:"Fearless",
+                artist: "Taylor Swift",
+            },
+            {
+                name: "image5",
+                tittle: "Hall Of Fame", 
+                artist: "The Script",
+            },
+        ];
+
+        loadsong = (songs) =>{
+            tittle.textContent = songs.tittle;
+            artist.textContent = songs.artist;
+            music.src = "music/"+songs.name+ ".mp3";
+            img.src = "pics/"+songs.name+".jpg";
+        };
+        songindex =0;
+        nextsong = () =>{
+            songindex = (songindex +1 )% songs.length;
+            loadsong(songs[songindex]);
+            start();
+        }
+        prevsong = () =>{
+            songindex = (songindex - 1 + songs.length )% songs.length;
+            loadsong(songs[songindex]);
+            start();
+        }
+         next.addEventListener("click",nextsong);
+         prev.addEventListener("click",prevsong);
+         music.onended = function(){
+             nextsong();
+         }
+
+    </script>
+</body>
+
+</html>
