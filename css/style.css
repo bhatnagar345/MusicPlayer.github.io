@@ -28,8 +28,8 @@ html{
 
 
 .music_container{
-    width: 30rem;
-    height: 45rem;
+    width: 35rem;
+    height: 50rem;
     background-color: white;
     box-shadow: 0 1.2rem 3rem 0.5rem rgba(8, 8, 8, 0.5);
     border-radius: 2rem;
@@ -43,8 +43,8 @@ html{
     color: black;
     letter-spacing: 0.2rem;
     word-spacing: 0.5rem;
-    font-size: 2.5rem;
-    margin: 1rem 0;
+    font-size: 3rem;
+    margin: 2rem 0;
     /* font-weight: 500; */
     text-shadow: 0  0.3rem 0.5rem rgba(0, 0,0, 0.4);
 }
@@ -55,12 +55,12 @@ html{
     letter-spacing: 0.2rem;
     word-spacing: 0.5rem;
     font-size: 2rem;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
 }
 
 .pic_container{
-    width: 23rem;
-    height: 23rem;
+    width: 25rem;
+    height: 25rem;
     margin: auto;
     /* padding: 1.2rem 0; */
 }
@@ -78,7 +78,7 @@ html{
     justify-content: space-between;
     align-items: center;
     margin: auto;
-    margin-top: 3.2rem;
+    margin-top: 3.5rem;
 }
 
 .control_container .fas
